@@ -1,0 +1,17 @@
+﻿@model LeeAllenFarmAndTrucking.Models.Client
+<h3>Edit the Client</h3>
+<form asp-controller="Client" asp-action="EditClient" 
+    method="post">
+    <input asp-for="ClientId" type="hidden" />
+    <label asp-for="ClientName"> </label>
+    <input asp-for="ClientName" />
+    <br />
+    <label asp-for="ClientEmail"></label>
+    <input asp-for="ClientEmail" />
+    <br />
+    <label asp-for="ClientPhone"></label>
+    <input asp-for="ClientPhone" />
+    <br />
+    <button type="submit"> Update Client </button>
+    
+</form>

@@ -76,3 +76,10 @@ C:\Users\nrademann\Desktop\ASP\LeeAllenFarmAndTrucking\LeeAllenFarmAndTrucking\o
 C:\Users\nrademann\Desktop\ASP\LeeAllenFarmAndTrucking\LeeAllenFarmAndTrucking\obj\Debug\netcoreapp3.1\LeeAllenFarmAndTrucking.dll
 C:\Users\nrademann\Desktop\ASP\LeeAllenFarmAndTrucking\LeeAllenFarmAndTrucking\obj\Debug\netcoreapp3.1\LeeAllenFarmAndTrucking.pdb
 C:\Users\nrademann\Desktop\ASP\LeeAllenFarmAndTrucking\LeeAllenFarmAndTrucking\obj\Debug\netcoreapp3.1\LeeAllenFarmAndTrucking.genruntimeconfig.cache
+C:\Users\nrademann\Desktop\ASP\LeeAllenFarmAndTrucking\LeeAllenFarmAndTrucking\obj\Debug\netcoreapp3.1\Razor\Views\Client\AddClient.cshtml.g.cs
+C:\Users\nrademann\Desktop\ASP\LeeAllenFarmAndTrucking\LeeAllenFarmAndTrucking\obj\Debug\netcoreapp3.1\Razor\Views\Client\AllClient.cshtml.g.cs
+C:\Users\nrademann\Desktop\ASP\LeeAllenFarmAndTrucking\LeeAllenFarmAndTrucking\obj\Debug\netcoreapp3.1\Razor\Views\Client\DeleteClient.cshtml.g.cs
+C:\Users\nrademann\Desktop\ASP\LeeAllenFarmAndTrucking\LeeAllenFarmAndTrucking\obj\Debug\netcoreapp3.1\Razor\Views\Client\EditClient.cshtml.g.cs
+C:\Users\nrademann\Desktop\ASP\LeeAllenFarmAndTrucking\LeeAllenFarmAndTrucking\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
+C:\Users\nrademann\Desktop\ASP\LeeAllenFarmAndTrucking\LeeAllenFarmAndTrucking\obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs
+C:\Users\nrademann\Desktop\ASP\LeeAllenFarmAndTrucking\LeeAllenFarmAndTrucking\obj\Debug\netcoreapp3.1\Razor\Views\_ViewStart.cshtml.g.cs

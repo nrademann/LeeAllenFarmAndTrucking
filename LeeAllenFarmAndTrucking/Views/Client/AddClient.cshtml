@@ -1,0 +1,14 @@
+﻿@model LeeAllenFarmAndTrucking.Models.Client
+<form asp-controller="Client" asp-action="AddClient"
+    method="post">
+    <label asp-for="ClientName"></label>
+    <input asp-for="ClientName" />
+    <br />
+    <label asp-for="ClientEmail"></label>
+    <input asp-for="ClientEmail" />
+    <br />
+    <label asp-for="ClientPhone"></label>
+    <input asp-for="ClientPhone" />
+    <br />
+    <button type="submit">Add Client</button>
+</form>
