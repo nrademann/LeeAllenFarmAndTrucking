@@ -1,6 +1,8 @@
 ﻿using LeeAllenFarmAndTrucking.Models;
+using LeeAllenFarmAndTrucking.ViewModel;
 using Microsoft.AspNetCore.Mvc;
-using System;
+using Microsoft.EntityFrameworkCore;
+using System.Threading.Tasks;
 
 namespace LeeAllenFarmAndTrucking.Controllers
 {
@@ -11,21 +13,16 @@ namespace LeeAllenFarmAndTrucking.Controllers
             {
                 this.db = db;
             }
-            public IActionResult AllClient()
-            {
+            public async Task<IActionResult> AllClient()
+            { 
+                var client = await db.Clients.ToListAsync();
                 return View(db.Clients);
             }
             public IActionResult AddClient()
             {
                 return View();
             }
-            [HttpPost]
-            public IActionResult AddClient(Client client)
-            {
-                db.Add(client);
-                db.SaveChanges();
-                return RedirectToAction("AllClient");
-            }
+
             public IActionResult EditClient(int id)
             {
                 Client client;
@@ -38,20 +35,26 @@ namespace LeeAllenFarmAndTrucking.Controllers
                 client = db.Clients.Find(id);
                 return View(client);
             }
-
             [HttpPost]
-            public IActionResult EditClient(Client client)
+            public async Task<IActionResult> AddClient(Client client)
+            {
+                db.Add(client);
+                await db.SaveChangesAsync();
+                return RedirectToAction("AllClient");
+            }
+            [HttpPost]
+            public async Task<IActionResult> EditClient(Client client)
             {
                 db.Update(client);
-                db.SaveChanges();
+                await db.SaveChangesAsync();
                 return RedirectToAction("AllClient");
             }
 
             [HttpPost]
-            public IActionResult DeleteClient(Client client)
+            public async Task<IActionResult> DeleteClient(Client client)
             {
                 db.Remove(client);
-                db.SaveChanges();
+                await db.SaveChangesAsync();
                 return RedirectToAction("AllClient");
             }
             /*        public IActionResult Index()
