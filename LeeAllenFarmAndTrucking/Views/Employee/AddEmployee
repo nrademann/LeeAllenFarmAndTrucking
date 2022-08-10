@@ -1,0 +1,15 @@
+@model WebApplication1.Models.employee
+<form asp-controller="Employee" asp-action="AddEmployee" method="post">
+    label asp-for="EmployeeId">
+    <br />
+    <label asp-for="EmployeeName"></label>
+    <input asp-for="EmployeeName" />
+    <br />
+    <label asp-for="EmployeePhone"></label>
+    <input asp-for="EmployeePhone" />
+    <br />
+    <label asp-for="EmployeeEmail"></label>
+    <input asp-for="EmployeeEmail" />
+    <br />
+    <button type="submit">Add Employee</button>
+</form>
