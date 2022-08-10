@@ -1,0 +1,61 @@
+using WebApplication1.Models;
+using WebApplication1.ViewModel;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using System.Threading.Tasks;
+
+namespace WebApplication1.Controllers
+{
+    public class EmployeeController : Controller
+    {
+        LeeDbContext db;
+        public EmployeeController(LeeDbContext db)
+        {
+            this.db = db;
+        }
+        public async Task<IActionResult> AllEmployee()
+        {
+            var Employee = await db.Employees.ToListAsync();
+            return View(db.Employees);
+        }
+        public IActionResult AddEmployee()
+        {
+            return View();
+        }
+
+        public IActionResult EditEmployee(int id)
+        {
+            Employee Employee;
+            Employee = db.Employees.Find(id);
+            return View(Employee);
+        }
+        public IActionResult DeleteEmployee(int id)
+        {
+            Employee Employee;
+            Employee = db.Employees.Find(id);
+            return View(Employee);
+        }
+        [HttpPost]
+        public async Task<IActionResult> AddEmployee(Employee Employee)
+        {
+            db.Add(Employee);
+            await db.SaveChangesAsync();
+            return RedirectToAction("AllEmployee");
+        }
+        [HttpPost]
+        public async Task<IActionResult> EditEmployee(Employee Employee)
+        {
+            db.Update(Employee);
+            await db.SaveChangesAsync();
+            return RedirectToAction("AllEmployee");
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> DeleteEmployee(Employee Employee)
+        {
+            db.Remove(Employee);
+            await db.SaveChangesAsync();
+            return RedirectToAction("AllEmployee");
+        }
+    }
+}
