@@ -1,4 +1,4 @@
-@model WebApplication1.Models.employee
+@model LeeAllenFarmAndTrucking.Models.employee
 <form asp-controller="Employee" asp-action="AddEmployee" method="post">
     label asp-for="EmployeeId">
     <br />
