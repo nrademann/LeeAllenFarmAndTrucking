@@ -1,4 +1,4 @@
-@model WebApplication1.Models.Employee
+@model LeeAllenFarmAndTrucking.Models.Employee
 <h3>Delete the Employee</h3>
 <form asp-controller="Employee" asp-action="DeleteClient"
     method="post">
