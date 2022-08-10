@@ -44,27 +44,12 @@ namespace LeeAllenFarmAndTrucking.Controllers
             await db.SaveChangesAsync();
             return RedirectToAction("AllOrder");
         }
-        [HttpPost]
-        public IActionResult EditOrder(int id)
-        {
-            Order order;
-            order = db.Orders.Find(id);
-            return View(order);
         }
         public IActionResult DeleteOrder(int id)
         {
             Order order;
             order = db.Orders.Find(id);
             return View(order);
-        }
-
-
-        [HttpPost]
-        public IActionResult EditOrder(Order order)
-        {
-            db.Update(order);
-            db.SaveChanges();
-            return RedirectToAction("AllOrder");
         }
         [HttpPost]
         public IActionResult DeleteOrder(Order order)
