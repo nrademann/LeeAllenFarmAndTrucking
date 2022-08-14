@@ -19,15 +19,16 @@ namespace LeeAllenFarmAndTrucking.Controllers
         {
             var order = await db.Orders
                 .Include(c => c.client).ToListAsync();
-            return View(db.Orders);
+            return View(order);
         }
 
-        public  async Task<IActionResult> AddOrder()
+
+
+        public async Task<IActionResult> AddOrder()
         {
             var ClientDisplay = await db.Clients.Select(x => new
             {
-                Id =
-                x.ClientId,
+                Id = x.ClientId,
                 Value = x.ClientName
             }).ToListAsync();
             OrderAddOrderViewModel vm = new OrderAddOrderViewModel();
@@ -38,42 +39,119 @@ namespace LeeAllenFarmAndTrucking.Controllers
         public async Task<IActionResult> AddOrder(OrderAddOrderViewModel vm)
         {
             var client = await db.Clients.SingleOrDefaultAsync(i =>
-            i.ClientId == vm.Client.ClientId);
+                i.ClientId == vm.Client.ClientId);
             vm.Order.client = client;
             db.Add(vm.Order);
             await db.SaveChangesAsync();
             return RedirectToAction("AllOrder");
         }
+
+        /*       [HttpPost]
+               public IActionResult EditOrder(int id)
+               {
+                   Order order;
+                   order = db.Orders.Find(id);
+                   return View(order);
+               }
+               [HttpPost]
+               public IActionResult DeleteOrder(int id)
+               {
+                   Order order;
+                   order = db.Orders.Find(id);
+                   return View(order);
+               }
+
+       */
         [HttpPost]
+        public IActionResult EditOrder(int orderId)
+        {
+            Order order;
+            order = db.Orders.Find(orderId);
+            return View(orderId);
+        }
+        public async Task<IActionResult> EditOrder()
+        {
+            var ClientDisplay = await db.Clients.Select(x => new
+            {
+                Id = x.ClientId,
+                Value = x.ClientName
+            }).ToListAsync();
+            OrderEditOrderViewModel vm = new OrderEditOrderViewModel();
+            vm.ClientList = new SelectList(ClientDisplay, "Id", "Value");
+            return View(vm);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> EditOrder(OrderEditOrderViewModel vm)
+        {
+            var client = await db.Clients.SingleOrDefaultAsync(i =>
+                i.ClientId == vm.Client.ClientId);
+            vm.Order.client = client;
+            db.Update(vm.Order);
+            await db.SaveChangesAsync();
+            return RedirectToAction("AllOrder");
+        }
+        public async Task<IActionResult> DeleteOrder()
+        {
+            var ClientDisplay = await db.Clients.Select(x => new
+            {
+                Id = x.ClientId,
+                Value = x.ClientName
+            }).ToListAsync();
+            OrderDeleteOrderViewModel vm = new OrderDeleteOrderViewModel();
+            vm.ClientList = new SelectList(ClientDisplay, "Id", "Value");
+            return View(vm);
+        }
+        [HttpPost]
+        public async Task<IActionResult> DeleteOrder(OrderDeleteOrderViewModel vm){
+            var client = await db.Clients.SingleOrDefaultAsync(i =>
+                i.ClientId == vm.Client.ClientId);
+            vm.Order.client = client;
+            db.Remove(vm.Order);
+            await db.SaveChangesAsync();
+            return RedirectToAction("AllOrder");
+        }
+ /*      [HttpPost]
         public IActionResult EditOrder(int id)
         {
             Order order;
             order = db.Orders.Find(id);
             return View(order);
         }
+        [HttpPost]
         public IActionResult DeleteOrder(int id)
         {
             Order order;
             order = db.Orders.Find(id);
             return View(order);
         }
-
-
-        [HttpPost]
-        public IActionResult EditOrder(Order order)
+*//*        [HttpPost]
+        public async Task<IActionResult> AddOrder(OrderEditOrderViewModel vm)
         {
-            db.Update(order);
-            db.SaveChanges();
+            var client = await db.Clients.SingleOrDefaultAsync(i =>
+            i.ClientId == vm.Client.ClientId);
+            vm.Order.client = client;
+            db.Update(vm.Order);
+            await db.SaveChangesAsync();
             return RedirectToAction("AllOrder");
         }
-        [HttpPost]
+*/
+  /*             [HttpPost]
+               public IActionResult EditOrder(Order order)
+               {
+                   db.Update(order);
+                   db.SaveChanges();
+                   return RedirectToAction("AllOrder");
+               }
+ */       
+  /*      [HttpPost]
         public IActionResult DeleteOrder(Order order)
         {
             db.Remove(order);
             db.SaveChanges();
             return RedirectToAction("AllOrder");
         }
-        /*       public IActionResult Index()
+    */    /*       public IActionResult Index()
                {
                    return View();
                }

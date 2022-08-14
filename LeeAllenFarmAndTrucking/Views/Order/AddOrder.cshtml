@@ -1,6 +1,7 @@
 ﻿@model LeeAllenFarmAndTrucking.ViewModel.OrderAddOrderViewModel
 <form asp-controller="Order" asp-action="AddOrder"
     method="post">
+    <input asp-for="Order.orderId" type="hidden" />
     <label asp-for="Order.paid"></label>
     <input asp-for="Order.paid" />
     <br />
@@ -22,3 +23,5 @@
     <br />
     <button type="submit">Add Order</button>
 </form>
+    <p><a asp-controller="Order" asp-action="AllOrder">
+        No, back to list  </a></p>
