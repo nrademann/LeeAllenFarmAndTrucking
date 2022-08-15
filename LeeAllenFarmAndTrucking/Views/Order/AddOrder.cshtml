@@ -1,25 +1,24 @@
-﻿@model LeeAllenFarmAndTrucking.ViewModel.OrderAddOrderViewModel
+﻿@model LeeAllenFarmAndTrucking.Models.Order
 <form asp-controller="Order" asp-action="AddOrder"
     method="post">
-    <input asp-for="Order.orderId" type="hidden" />
-    <label asp-for="Order.paid"></label>
-    <input asp-for="Order.paid" />
+    <input asp-for="orderId" type="hidden" />
+    <label asp-for="paid"></label>
+    <input asp-for="paid" />
     <br />
-    <label asp-for="Order.StartDate"></label>
-    <input asp-for="Order.StartDate" />
+    <label asp-for="StartDate"></label>
+    <input asp-for="StartDate" />
     <br />
-    <label asp-for="Order.EndDate"></label>
-    <input asp-for="Order.EndDate" />
+    <label asp-for="EndDate"></label>
+    <input asp-for="EndDate" />
     <br />
-    <label asp-for="Order.typeService"></label>
-    <input asp-for="Order.typeService" />
+    <label asp-for="typeService"></label>
+    <input asp-for="typeService" />
     <br />
-    <label asp-for="Order.cost"></label>
-    <input asp-for="Order.cost" />
+    <label asp-for="cost"></label>
+    <input asp-for="cost" />
     <br />
-    <label asp-for="Client.ClientName"></label>
-    <select asp-for="Client.ClientId"
-            asp-items="@Model.ClientList"></select>
+    <label asp-for="client"></label>
+    <input asp-for="client.ClientName" />
     <br />
     <button type="submit">Add Order</button>
 </form>

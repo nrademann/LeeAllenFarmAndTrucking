@@ -1,5 +1,4 @@
 ﻿using LeeAllenFarmAndTrucking.Models;
-using LeeAllenFarmAndTrucking.ViewModel;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -21,9 +20,45 @@ namespace LeeAllenFarmAndTrucking.Controllers
                 .Include(c => c.client).ToListAsync();
             return View(order);
         }
+        public IActionResult AddOrder()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult AddOrder(Order order)
+        {
+            db.Add(order);
+            db.SaveChanges();
+            return RedirectToAction("AllOrder");
+        }
+        public IActionResult EditOrder(int id)
+        {
+             Order order;
+             order = db.Orders.Find(id);
+             return View(order);
+         }
 
-
-
+         public IActionResult DeleteOrder(int id)
+         {
+             Order order;
+             order = db.Orders.Find(id);
+             return View(order);
+         }
+         [HttpPost]
+         public IActionResult EditOrder(Order order)
+         {
+             db.Update(order);
+             db.SaveChanges();
+            return RedirectToAction("AllOrder");
+         }
+         [HttpPost]    
+          public IActionResult DeleteOrder(Order order)
+          {
+              db.Remove(order);
+              db.SaveChanges();
+              return RedirectToAction("AllOrder");
+          }
+/*
         public async Task<IActionResult> AddOrder()
         {
             var ClientDisplay = await db.Clients.Select(x => new
@@ -45,24 +80,13 @@ namespace LeeAllenFarmAndTrucking.Controllers
             await db.SaveChangesAsync();
             return RedirectToAction("AllOrder");
         }
+//<<<<<<< HEAD
+*/
+               
 
-        /*       [HttpPost]
-               public IActionResult EditOrder(int id)
-               {
-                   Order order;
-                   order = db.Orders.Find(id);
-                   return View(order);
-               }
-               [HttpPost]
-               public IActionResult DeleteOrder(int id)
-               {
-                   Order order;
-                   order = db.Orders.Find(id);
-                   return View(order);
-               }
 
-       */
-        [HttpPost]
+
+/*        [HttpPost]
         public IActionResult EditOrder(int orderId)
         {
             Order order;
@@ -117,6 +141,8 @@ namespace LeeAllenFarmAndTrucking.Controllers
             Order order;
             order = db.Orders.Find(id);
             return View(order);
+=======
+>>>>>>> 0c4f16d60bd744404f1e2d95ffd513b9ceeeda32
         }
         [HttpPost]
         public IActionResult DeleteOrder(int id)
@@ -125,6 +151,7 @@ namespace LeeAllenFarmAndTrucking.Controllers
             order = db.Orders.Find(id);
             return View(order);
         }
+<<<<<<< HEAD
 *//*        [HttpPost]
         public async Task<IActionResult> AddOrder(OrderEditOrderViewModel vm)
         {
@@ -136,22 +163,15 @@ namespace LeeAllenFarmAndTrucking.Controllers
             return RedirectToAction("AllOrder");
         }
 */
-  /*             [HttpPost]
-               public IActionResult EditOrder(Order order)
-               {
-                   db.Update(order);
-                   db.SaveChanges();
-                   return RedirectToAction("AllOrder");
-               }
- */       
-  /*      [HttpPost]
-        public IActionResult DeleteOrder(Order order)
-        {
-            db.Remove(order);
-            db.SaveChanges();
-            return RedirectToAction("AllOrder");
-        }
-    */    /*       public IActionResult Index()
+
+        /*       
+                [HttpPost]
+        =======
+                [HttpPost]
+        >>>>>>> 0c4f16d60bd744404f1e2d95ffd513b9ceeeda32
+        */
+
+        /*       public IActionResult Index()
                {
                    return View();
                }
