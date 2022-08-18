@@ -1,4 +1,5 @@
-﻿namespace LeeAllenFarmAndTrucking.Models
+﻿using System.Collections.Generic;
+namespace LeeAllenFarmAndTrucking.Models
 {
     public class Employee
     {
