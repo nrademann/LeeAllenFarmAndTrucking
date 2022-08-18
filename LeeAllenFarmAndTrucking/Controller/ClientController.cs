@@ -57,11 +57,7 @@ namespace LeeAllenFarmAndTrucking.Controllers
                 await db.SaveChangesAsync();
                 return RedirectToAction("AllClient");
             }
-            /*        public IActionResult Index()
-                    {
-                        return View();
-                    }
-             */
+
         }
     }
 

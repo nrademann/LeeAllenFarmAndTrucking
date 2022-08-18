@@ -28,7 +28,7 @@
                                 <td>@order.EndDate</td>
                                 <td>@order.typeService</td>
                                 <td>@order.cost</td>
-                                <td>@order.client</td>
+                                <td>@order.client.ClientName</td>
                                 <td><a asp-action="EditOrder" asp-route-id="@order.orderId">Edit</a></td>
                                 <td><a asp-action="DeleteOrder" asp-route-id="@order.orderId">Delete</a></td>
                             </tr>

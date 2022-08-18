@@ -1,15 +1,15 @@
-@model LeeAllenFarmAndTrucking.Models.employee
-<form asp-controller="Employee" asp-action="AddEmployee" method="post">
-    label asp-for="EmployeeId">
-    <br />
+﻿@model LeeAllenFarmAndTrucking.Models.Employee
+<form asp-controller="Employee" asp-action="AddEmployee"
+    method="post">
     <label asp-for="EmployeeName"></label>
     <input asp-for="EmployeeName" />
     <br />
     <label asp-for="EmployeePhone"></label>
     <input asp-for="EmployeePhone" />
     <br />
-    <label asp-for="EmployeeEmail"></label>
-    <input asp-for="EmployeeEmail" />
+    <label asp-for="ClientEmail"></label>
+    <input asp-for="ClientEmail" />
     <br />
     <button type="submit">Add Employee</button>
 </form>
+

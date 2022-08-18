@@ -1,4 +1,4 @@
-@model LeeAllenFarmAndTrucking.Models.employee
+﻿@model IEnumerable<LeeAllenFarmAndTrucking.Models.Employee>
 <p><a asp-controller="Employee" asp-action="AddEmployee">
     Add a Client</a></p>
 @{
@@ -19,15 +19,15 @@
                 <th>Delete</th>
             </tr>
             @{
-                foreach(var client in Model)
+                foreach(var employee in Model)
                 {
                     <tr>
-                        <td>@client.EmployeeId</td>
-                        <td>@client.EmployeeName</td>
-                        <td>@client.EmployeePhone</td>
-                        <td>@client.EmployeeEmail</td>
-                        <td><a asp-action="EditEmployee" asp-route-id="@employee.EmployeeId">Edit</a></td>
-                        <td><a asp-action="DeleteEmployee" asp-route-id="@employee.EmployeeId">Delete</a></td>
+                        <td>@employee.EmployeeId</td>
+                        <td>@employee.EmployeeName</td>
+                        <td>@employee.EmployeePhone</td>
+                        <td>@employee.ClientEmail</td>
+                        <td><a asp-action="EditEmployee" asp-route-id="@employee.EmployeeId"> Edit </a></td>
+                        <td><a asp-action="DeleteEmployee" asp-route-id="@employee.EmployeeId"> Delete </a></td>
                     </tr>
                 }
             }

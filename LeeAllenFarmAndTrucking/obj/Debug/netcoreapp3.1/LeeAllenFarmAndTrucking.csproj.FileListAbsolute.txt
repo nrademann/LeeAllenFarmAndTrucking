@@ -87,3 +87,7 @@ C:\Users\nrademann\Desktop\ASP\LeeAllenFarmAndTrucking\LeeAllenFarmAndTrucking\o
 C:\Users\nrademann\Desktop\ASP\LeeAllenFarmAndTrucking\LeeAllenFarmAndTrucking\obj\Debug\netcoreapp3.1\Razor\Views\Order\AllOrder.cshtml.g.cs
 C:\Users\nrademann\Desktop\ASP\LeeAllenFarmAndTrucking\LeeAllenFarmAndTrucking\obj\Debug\netcoreapp3.1\Razor\Views\Order\DeleteOrder.cshtml.g.cs
 C:\Users\nrademann\Desktop\ASP\LeeAllenFarmAndTrucking\LeeAllenFarmAndTrucking\obj\Debug\netcoreapp3.1\Razor\Views\Order\EditOrder.cshtml.g.cs
+C:\Users\nrademann\Desktop\ASP\LeeAllenFarmAndTrucking\LeeAllenFarmAndTrucking\obj\Debug\netcoreapp3.1\Razor\Views\Employee\AddEmployee.cshtml.g.cs
+C:\Users\nrademann\Desktop\ASP\LeeAllenFarmAndTrucking\LeeAllenFarmAndTrucking\obj\Debug\netcoreapp3.1\Razor\Views\Employee\AllEmployee.cshtml.g.cs
+C:\Users\nrademann\Desktop\ASP\LeeAllenFarmAndTrucking\LeeAllenFarmAndTrucking\obj\Debug\netcoreapp3.1\Razor\Views\Employee\DeleteEmployee.cshtml.g.cs
+C:\Users\nrademann\Desktop\ASP\LeeAllenFarmAndTrucking\LeeAllenFarmAndTrucking\obj\Debug\netcoreapp3.1\Razor\Views\Employee\EditEmployee.cshtml.g.cs

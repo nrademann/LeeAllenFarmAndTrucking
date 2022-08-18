@@ -1,10 +1,10 @@
-using WebApplication1.Models;
-using WebApplication1.ViewModel;
+﻿using LeeAllenFarmAndTrucking.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
+using System.Collections.Generic;
 
-namespace WebApplication1.Controllers
+namespace LeeAllenFarmAndTrucking.Controllers
 {
     public class EmployeeController : Controller
     {
@@ -13,9 +13,10 @@ namespace WebApplication1.Controllers
         {
             this.db = db;
         }
+
         public async Task<IActionResult> AllEmployee()
         {
-            var Employee = await db.Employees.ToListAsync();
+            var employee = await db.Employees.ToListAsync();
             return View(db.Employees);
         }
         public IActionResult AddEmployee()
@@ -25,37 +26,52 @@ namespace WebApplication1.Controllers
 
         public IActionResult EditEmployee(int id)
         {
-            Employee Employee;
-            Employee = db.Employees.Find(id);
-            return View(Employee);
+            Employee employee;
+            employee = db.Employees.Find(id);
+            return View(employee);
         }
         public IActionResult DeleteEmployee(int id)
         {
-            Employee Employee;
-            Employee = db.Employees.Find(id);
-            return View(Employee);
+            Employee employee;
+            employee = db.Employees.Find(id);
+            return View(employee);
         }
         [HttpPost]
-        public async Task<IActionResult> AddEmployee(Employee Employee)
+        public async Task<IActionResult> AddEmployee(Employee employee)
         {
-            db.Add(Employee);
+            db.Add(employee);
             await db.SaveChangesAsync();
             return RedirectToAction("AllEmployee");
         }
         [HttpPost]
-        public async Task<IActionResult> EditEmployee(Employee Employee)
+        public async Task<IActionResult> EditEmployee(Employee employee)
         {
-            db.Update(Employee);
+            db.Update(employee);
             await db.SaveChangesAsync();
             return RedirectToAction("AllEmployee");
         }
 
         [HttpPost]
-        public async Task<IActionResult> DeleteEmployee(Employee Employee)
+        public async Task<IActionResult> DeleteEmployee(Employee employee)
         {
-            db.Remove(Employee);
+            db.Remove(employee);
             await db.SaveChangesAsync();
             return RedirectToAction("AllEmployee");
         }
     }
 }
+/*
+namespace LeeAllenFarmAndTrucking.Controller
+{
+    public class EmployeeController
+    {
+    }
+}
+*/
+/*namespace LeeAllenFarmAndTrucking.Controller
+{
+    public class EmployeeController
+    {
+    }
+}
+*/
