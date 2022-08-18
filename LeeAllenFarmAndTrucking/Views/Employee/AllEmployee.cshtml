@@ -1,6 +1,6 @@
 ﻿@model IEnumerable<LeeAllenFarmAndTrucking.Models.Employee>
 <p><a asp-controller="Employee" asp-action="AddEmployee">
-    Add a Client</a></p>
+    Add a Employee</a></p>
 @{
     if(Model.Count() < 1)
     {
@@ -25,7 +25,7 @@
                         <td>@employee.EmployeeId</td>
                         <td>@employee.EmployeeName</td>
                         <td>@employee.EmployeePhone</td>
-                        <td>@employee.ClientEmail</td>
+                        <td>@employee.EmployeeEmail</td>
                         <td><a asp-action="EditEmployee" asp-route-id="@employee.EmployeeId"> Edit </a></td>
                         <td><a asp-action="DeleteEmployee" asp-route-id="@employee.EmployeeId"> Delete </a></td>
                     </tr>

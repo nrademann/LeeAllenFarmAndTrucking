@@ -9,7 +9,7 @@
         public string typeService { get; set; }
         public string cost { get; set; }
         public Client client { get; set; }
-     //   public Employee employee { get; set; }
+
        
     }
 }

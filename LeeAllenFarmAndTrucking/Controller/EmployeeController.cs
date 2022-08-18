@@ -1,8 +1,10 @@
 ﻿using LeeAllenFarmAndTrucking.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
-using System.Collections.Generic;
+using System.Linq;
+
 
 namespace LeeAllenFarmAndTrucking.Controllers
 {
@@ -13,13 +15,12 @@ namespace LeeAllenFarmAndTrucking.Controllers
         {
             this.db = db;
         }
-
         public async Task<IActionResult> AllEmployee()
         {
             var employee = await db.Employees.ToListAsync();
             return View(db.Employees);
         }
-        public IActionResult AddEmployee()
+        public IActionResult AddClient()
         {
             return View();
         }
@@ -58,20 +59,21 @@ namespace LeeAllenFarmAndTrucking.Controllers
             await db.SaveChangesAsync();
             return RedirectToAction("AllEmployee");
         }
+
     }
 }
-/*
+
+
+/*using Microsoft.AspNetCore.Mvc;
+
 namespace LeeAllenFarmAndTrucking.Controller
 {
-    public class EmployeeController
+    public class EmployeeController : Controller
     {
-    }
-}
-*/
-/*namespace LeeAllenFarmAndTrucking.Controller
-{
-    public class EmployeeController
-    {
+        public IActionResult Index()
+        {
+            return View();
+        }
     }
 }
 */
