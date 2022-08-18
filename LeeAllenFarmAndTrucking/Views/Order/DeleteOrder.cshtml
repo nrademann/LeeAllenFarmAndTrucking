@@ -1,0 +1,30 @@
+﻿@model LeeAllenFarmAndTrucking.Models.Order
+<h3>Delete the Order</h3>
+<p>Are you sure you want to delete this order?</p>
+<form asp-controller="Order" asp-action="DeleteOrder"
+    method="post">
+    <input asp-for="client.ClientId" type="hidden" />
+    <input asp-for="orderId" type="hidden" />
+    <label asp-for="paid"></label>
+    <input asp-for="paid" />
+    <br />
+    <label asp-for="StartDate"></label>
+    <input asp-for="StartDate" />
+    <br />
+    <label asp-for="EndDate"></label>
+    <input asp-for="EndDate" />
+    <br />
+    <label asp-for="typeService"></label>
+    <input asp-for="typeService" />
+    <br />
+    <label asp-for="cost"></label>
+    <input asp-for="cost" />
+    <br />
+    <label asp-for="client"></label>
+    <input asp-for="client.ClientName" />
+    <br />
+    <button type="submit">Yes Delete </button>
+
+</form>
+    <p><a asp-controller="Order" asp-action="AllOrder">
+        No, back to list  </a></p>

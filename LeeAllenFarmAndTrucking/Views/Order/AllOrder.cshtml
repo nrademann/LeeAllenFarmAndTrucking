@@ -1,0 +1,39 @@
+﻿@model IEnumerable<LeeAllenFarmAndTrucking.Models.Order>
+<p><a asp-action="AddOrder">Add a Order</a></p>
+@{
+    if(Model.Count() < 1)
+    {
+    <p>No Orders in database yet</p>
+    }
+    else
+    {
+    <h3>All Orders</h3>
+    <table border="1">
+                <tr>
+                    <th>OrderId</th>
+                    <th>paid</th>
+                    <th>StartDate</th>
+                    <th>EndDate</th>
+                    <th>typeService</th>
+                    <th>cost</th>
+                    <th>Client Name</th>
+                </tr>
+                @{
+                foreach(var order in Model)
+                {
+                            <tr>
+                                <td>@order.orderId</td>
+                                <td>@order.paid</td>
+                                <td>@order.StartDate</td>
+                                <td>@order.EndDate</td>
+                                <td>@order.typeService</td>
+                                <td>@order.cost</td>
+                                <td>@order.client</td>
+                                <td><a asp-action="EditOrder" asp-route-id="@order.orderId">Edit</a></td>
+                                <td><a asp-action="DeleteOrder" asp-route-id="@order.orderId">Delete</a></td>
+                            </tr>
+                }
+                }
+    </table>
+    }
+}

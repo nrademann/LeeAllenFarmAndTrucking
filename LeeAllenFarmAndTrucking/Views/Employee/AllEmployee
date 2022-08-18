@@ -1,0 +1,36 @@
+@model LeeAllenFarmAndTrucking.Models.employee
+<p><a asp-controller="Employee" asp-action="AddEmployee">
+    Add a Client</a></p>
+@{
+    if(Model.Count() < 1)
+    {
+        <p>No Employees in database yet</p>
+    }
+    else
+    {
+        <h3>All Employees</h3>
+        <table border="1">
+            <tr>
+                <th>Employee Id</th>
+                <th>Employee Name</th>
+                <th>Employee Phone</th>
+                <th>Employee Email</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+            @{
+                foreach(var client in Model)
+                {
+                    <tr>
+                        <td>@client.EmployeeId</td>
+                        <td>@client.EmployeeName</td>
+                        <td>@client.EmployeePhone</td>
+                        <td>@client.EmployeeEmail</td>
+                        <td><a asp-action="EditEmployee" asp-route-id="@employee.EmployeeId">Edit</a></td>
+                        <td><a asp-action="DeleteEmployee" asp-route-id="@employee.EmployeeId">Delete</a></td>
+                    </tr>
+                }
+            }
+        </table>
+    }
+}
