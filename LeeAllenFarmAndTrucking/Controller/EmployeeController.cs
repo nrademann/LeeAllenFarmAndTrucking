@@ -21,7 +21,7 @@ namespace LeeAllenFarmAndTrucking.Controllers
             var employee = await db.Employees.ToListAsync();
             return View(db.Employees);
         }
-        public IActionResult AddClient()
+        public IActionResult AddEmployee()
         {
             return View();
         }
